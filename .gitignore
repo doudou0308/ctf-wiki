@@ -1,6 +1,7 @@
-# Obsidian workspace (machine-specific)
+# Obsidian workspace & cache (machine-specific)
 .obsidian/workspace.json
 .obsidian/workspace
+.obsidian/graph.json
 
 # Downloaded images/attachments
 raw/assets/*

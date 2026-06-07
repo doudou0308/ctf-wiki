@@ -91,6 +91,9 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 | [[reverse/jinqi-labyrinth-maze-binary]] | 2048×2048 ELF 迷宫 + UD2 方向编码 + BFS 寻路 |
 | [[reverse/rerere-windows-pe-sbox-xor]] | Windows PE .rdata 段 S-BOX + XOR 查表解码 |
 | [[reverse/jinqi-hardware-flags-obfuscated-flag-check]] | GF(2) 线性变换逆推 + GDB oracle + RDTSC 反调试 |
+| [[reverse/renpy-pe-xor-23]] | Ren'Py .rpyc 反序列化 + 嵌入 PE stdout + XOR 0x23 还原 |
+| [[reverse/springboot-custom-vm-pcap-aes]] | Spring Boot 栈式 VM + Rust AES-CBC 变体 + PCAP 解密 |
+| [[reverse/unity-il2cpp-themida-aes]] | Unity IL2CPP + Themida 内存 Dump + AES-CBC 解密 |
 
 ## Forensics
 
@@ -130,6 +133,7 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 | [[ai-ml/ctf-agent-benchmark-reference]] | CTF Agent 评测 Benchmark 框架参考（BoxPwnr/HackSynth/XBOW） |
 | [[ai-ml/prompt-injection-llm-jailbreak]] | Prompt 注入与 LLM Jailbreak 攻击技巧 |
 | [[ai-ml/jinqi-modelhub-pickle-deserialization]] | PyTorch .pt Pickle 反序列化 RCE（__reduce__ → eval） |
+| [[ai-ml/lattice-cnn-lwe-small-dimension]] | LWE-like 小维度噪声枚举 5^8 + CNN 特征 + AES 密钥推导 |
 
 ## Cloud Security
 
@@ -348,13 +352,15 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 | Page | Summary |
 |------|---------|
 | [[ctf/litctf-2026]] | LitCTF 2026 — 宽字节注入/Mako SSTI/Go逆向JWT/kkFileView/Shiro GCM 5题 WP |
+| [[ctf/changchengbei-2026]] | 第三届长城杯 — Ren'Py/自定义VM/Unity IL2CPP/LWE CNN 4题 WP |
 
 ## Source Summaries
 
 | Page | Summary |
 |------|---------|
 | [[ctf/summary--litctf-2026-web-wp]] | LitCTF 2026 WEB 方向全WP 源文档摘要 |
+| [[ctf/summary--changchengbei-wp]] | 第三届长城杯防护赛决赛 部分 WP 源文档摘要 |
 
 ---
 
-*Last updated: 2026-06-07 | Total pages: ~231+（97 命名页 + 99 skill 参考 + 11 command 参考 + 7 rules + 2 raw + 3 code-audit extras + 10 synthesis/index + 2 summary）*
+*Last updated: 2026-06-07 | Total pages: ~238+（101 命名页 + 99 skill 参考 + 11 command 参考 + 7 rules + 2 raw + 3 code-audit extras + 10 synthesis/index + 3 summary）*

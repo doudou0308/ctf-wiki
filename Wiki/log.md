@@ -237,4 +237,28 @@ Synthesized 1124 GHSA entries into 8 curated concept pages organized by vulnerab
 - [[ctf/litctf-2026]] — LitCTF 2026 5 题 Web WP 竞赛索引（新 `wiki/ctf/` 子目录）
 - [[ctf/summary--litctf-2026-web-wp]] — 源文档摘要
 
+---
+
+## [2026-06-07 23:40] ingest | 第三届"长城杯"防护赛决赛 WP → wiki
+
+**来源：** `raw/第三届"长城杯"网数智安全大赛(防护赛)决赛-部分WP.md`（wallkone）
+
+**4 个新建技术页：**
+- [[reverse/renpy-pe-xor-23]] — Ren'Py .rpyc 反序列化 + 嵌入 PE + XOR 0x23
+- [[reverse/springboot-custom-vm-pcap-aes]] — Spring Boot 自定义栈式 VM + Rust AES-CBC + PCAP 解密
+- [[reverse/unity-il2cpp-themida-aes]] — Unity IL2CPP + Themida 内存 Dump + AES-CBC
+- [[ai-ml/lattice-cnn-lwe-small-dimension]] — 小维度 LWE 噪声枚举 5^8 + CNN 特征 + AES 密钥推导
+
+**竞赛实体页 + 摘要：**
+- [[ctf/changchengbei-2026]] — 第三届长城杯 4 题 WP 竞赛索引
+- [[ctf/summary--changchengbei-wp]] — 源文档摘要
+
+**填补知识空白：**
+- Ren'Py 游戏逆向（全新游戏引擎逆向方向）
+- 自定义栈式 VM（Spring Boot JAR 隐藏 VM + Rust ELF + PCAP 多阶段逆向链）
+- Unity IL2CPP + Themida（内存 dump 脱壳 + IL2CPP 元数据定位 + 假 flag 干扰）
+- LWE-like 小维度枚举（公开 CNN + 隐藏向量 + 小噪声暴力枚举 5^8）
+
+**更新：** index.md（101 命名页 + 3 条记录）、log.md
+
 **更新：** AGENTS.md（含 ctf/ 子目录）、index.md（新增 Web 4 页 + CTF Competitions + Source Summaries 分区）、log.md
