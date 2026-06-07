@@ -21,11 +21,12 @@
 然后立即阅读所有加载的 Skill 的 SKILL.md + 各 1 个最相关的 reference 文件。
 读完 Skill 内容后再深入分析。
 
-知识库（ctf-kb/）不在启动阶段查，仅在以下情况触发：
+知识库（Obsidian Wiki）不在启动阶段查，仅在以下情况触发：
 - 同一方向 2 轮卡壳无进展
 - 完全陌生的题型/框架/文件格式
 - 解题方向摇摆不定
-触发时执行: grep -ri "关键词" "c:\Users\ZZH\.trae\ctf-kb\"
+触发时优先搜 triggers: Grep -i "triggers:.*关键词" "C:\Users\ZZH\Documents\Obsidian Vault\Wiki\Wiki\"
+triggers 无命中全文搜: Grep -ri "关键词" "C:\Users\ZZH\Documents\Obsidian Vault\Wiki\Wiki\"
 
 题目: <粘贴题目描述或附件路径>
 ```

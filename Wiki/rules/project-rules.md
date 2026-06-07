@@ -3,7 +3,8 @@
 ## 架构
 
 Skill 包基于 `ljagiello/ctf-skills`（v2.x），全部在 `c:\Users\ZZH\.trae\skills\`。
-知识库在 `c:\Users\ZZH\.trae\ctf-kb\`。
+知识库在 Obsidian Wiki：`C:\Users\ZZH\Documents\Obsidian Vault\Wiki\Wiki\`（217 页，YAML frontmatter + `[[wikilinks]]`）。
+Docker 工具容器：`ctf-box`（持久化，挂载 `/work` → 工作目录，`/wiki` → 知识库）。
 
 ## 核心原则：Flag 即终点
 
@@ -25,7 +26,7 @@ Batch 1（并行，全部同时发出）：
   │     └── 对压缩包(.zip/.tar.gz/.7z/.rar)：先解压再对内容跑上述命令
   │         密码保护 → 尝试常见密码：infected, 123456, password, flag, <文件名>, 无密码(回车)
   ├── 0.3 URL/服务侦察（如有 URL/端口）：
-  │     ├── docker exec chying-agent-docker python3 /root/agent-work/web_recon.py http://host:port/ --timeout 15
+  │     ├── docker exec ctf-box python3 /work/web_recon.py http://host:port/ --timeout 15
   │     └── curl -s http://host:port/ -Method HEAD -UseBasicParsing
   └── 0.4 无附件/纯文本描述 → 读题 3 遍，识别关键词直接分类
 ```
@@ -37,7 +38,11 @@ Batch 1（并行，全部同时发出）：
 > - 遇到不在"规则二"分流表内的文件格式
 > - 解题方向摇摆不定
 >
-> 触发时：`Grep "关键技术词" "c:\Users\ZZH\.trae\ctf-kb\"`
+> 触发时（优先搜 triggers 字段）：
+> ```bash
+> Grep -i "triggers:.*<关键词>" "C:\Users\ZZH\Documents\Obsidian Vault\Wiki\Wiki\"
+> ```
+> triggers 无命中再全文：`Grep -ri "<关键词>" "C:\Users\ZZH\Documents\Obsidian Vault\Wiki\Wiki\"`
 
 ---
 
@@ -46,7 +51,7 @@ Batch 1（并行，全部同时发出）：
 ```
 1. [进行中] Skill 加载 + 零轮侦察（Batch 1 并行）
 2. [待办] 解题：逐层分析直至拿 flag
-3. [待办] 归档：写入 ctf-kb 对应赛道目录
+3. [待办] 归档：写入 Obsidian Wiki 对应赛道目录
 ```
 
 ---
@@ -195,21 +200,22 @@ $env:Path = "F:\DockerDesktop\resources\bin;F:\DockerDesktop\resources\cli-plugi
 不能省略 PATH 前缀，不能单写 `docker`。
 **注册表已永久修复，重启 Trae IDE 后即可直接使用 `docker`。重启前必须带 PATH 前缀。**
 
-调用前缀：`docker exec chying-agent-docker <tool> <args>`。
-文件交互：`agent-work` 目录已挂载至容器 `/root/agent-work`，将文件放入 `g:\...\CHYing-agent-main\agent-work\` 即可在容器内 `/root/agent-work/` 访问。临时文件用 `docker cp <src> chying-agent-docker:<dst>`。
+调用前缀：`docker exec ctf-box <tool> <args>`。
+文件交互：工作目录 `g:\比赛\训练集\测试用` 已挂载至容器 `/work`，Docker 内直接访问 `/work/` 即可。
+知识库挂载：`C:\Users\ZZH\Documents\Obsidian Vault\Wiki\Wiki` 挂载至容器 `/wiki`。
 
 GhidraMCP：headless REST 在 `localhost:8089`，Bridge SSE 在 `localhost:8766`。可使用 IDA MCP 工具自动连接。
 
 | 类别 | 工具 | 示例 |
 |------|------|------|
-| Web | sqlmap, ffuf, wpscan, sslscan, nuclei, whatweb, arjun, commix, **web_recon**(自动侦察), **web_form_parser**(表单提取) | `docker exec chying-agent-docker python3 /root/agent-work/web_recon.py URL` |
-| 网络 | nmap, tcpdump, socat, hydra, netcat | `docker exec chying-agent-docker nmap -sV TARGET` |
-| 密码 | john, hashcat, hashid, cewl | `docker exec chying-agent-docker john hash.txt` |
-| 取证 | binwalk, foremost, steghide, exiftool, pngcheck, tshark, zsteg, sleuthkit, bulk-extractor | `docker exec chying-agent-docker binwalk -e file` |
-| Pwn | gdb, gdb-multiarch, radare2, pwndbg, pwntools(python), ROPgadget, one_gadget | `docker exec chying-agent-docker python3 -c "import pwn; ..."` |
-| 后渗透 | crackmapexec, evil-winrm, impacket-scripts, chisel, metasploit-framework, smbclient, smbmap | `docker exec chying-agent-docker crackmapexec smb TARGET` |
+| Web | sqlmap, ffuf, wpscan, sslscan, nuclei, whatweb, arjun, commix, **web_recon**(自动侦察), **web_form_parser**(表单提取) | `docker exec ctf-box python3 /root/agent-work/web_recon.py URL` |
+| 网络 | nmap, tcpdump, socat, hydra, netcat | `docker exec ctf-box nmap -sV TARGET` |
+| 密码 | john, hashcat, hashid, cewl | `docker exec ctf-box john hash.txt` |
+| 取证 | binwalk, foremost, steghide, exiftool, pngcheck, tshark, zsteg, sleuthkit, bulk-extractor | `docker exec ctf-box binwalk -e file` |
+| Pwn | gdb, gdb-multiarch, radare2, pwndbg, pwntools(python), ROPgadget, one_gadget | `docker exec ctf-box python3 -c "import pwn; ..."` |
+| 后渗透 | crackmapexec, evil-winrm, impacket-scripts, chisel, metasploit-framework, smbclient, smbmap | `docker exec ctf-box crackmapexec smb TARGET` |
 | 逆向 | GhidraMCP(:8089/:8766), jadx, ysoserial, jwt_tool, phpggc, Gopherus, tplmap, XSStrike | MCP 自动连接 `localhost:8766` |
-| 专项 | seclists(/usr/share/seclists/), Web-Fuzzing-Box(/usr/share/wordlists/Web-Fuzzing-Box/) | `docker exec chying-agent-docker ffuf -w /usr/share/seclists/...` |
+| 专项 | seclists(/usr/share/seclists/), Web-Fuzzing-Box(/usr/share/wordlists/Web-Fuzzing-Box/) | `docker exec ctf-box ffuf -w /usr/share/seclists/...` |
 
 ---
 
@@ -237,7 +243,7 @@ GhidraMCP：headless REST 在 `localhost:8089`，Bridge SSE 在 `localhost:8766`
 
 ### 规则十-C：知识库搜索触发
 
-以下任一信号出现 → 立刻 `Grep` 查 ctf-kb，不延迟：
+以下任一信号出现 → 立刻 `Grep` 查 Obsidian Wiki，不延迟：
 
 - 版本号（Flask/2.1, uvicorn/0.20, PyDash...）
 - 错误信息含产品名（"Werkzeug debugger", "Django CSRF", "Apache Struts"）
@@ -314,32 +320,45 @@ flag + writeup 完成后，**强制复盘**，提炼：
 - **【新增冷门题型】**：不在 Skill 覆盖范围内 → 完整收录
 - **【经典题型补充】**：常规题型但有本题独有细节 → 精简入库
 
-#### 15.3 入库格式
+#### 15.3 入库格式（Obsidian Wiki 格式，含 YAML frontmatter）
 
-```
+```yaml
+---
+title: <题目名>
+tags: [<题型标签>, <新增冷门|经典补充>]
+category: web | crypto | pwn | reverse | forensics | misc | ai-ml | cloud-security | code-audit | malware | osint
+triggers: [<中英双语关键词>, <CVE编号>, <http-header>, <路径名>, <题面常见词>]
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+sources: [raw/ctf-solutions/<题目名>]
+---
 # <题目名>
 - 标签: [<题型>] [<标记>]
 - 赛题来源: <CTF名称/平台>
 - 关键考点: <1-2 个核心技术点>
 - 解题误区: <最容易走错的方向>
 - 破题突破口: <关键一步>
-- 核心脚本/命令: <最关键的 solve 代码>
+- 核心脚本/命令: <最关键的 solve 代码片段>
 ```
 
-写入 `c:\Users\ZZH\.trae\ctf-kb\<赛道>\<题目名>.md`
+写入 `C:\Users\ZZH\Documents\Obsidian Vault\Wiki\Wiki\<赛道>\<题目名>.md`
 
 #### 15.4 知识库按需触发
 
-仅当 2 轮卡壳、陌生格式、方向摇摆时触发：
+仅当 2 轮卡壳、陌生格式、方向摇摆时触发，**优先搜 triggers 字段**：
 ```
-Grep "关键技术词" "c:\Users\ZZH\.trae\ctf-kb\"
+Grep -i "triggers:.*<关键词>" "C:\Users\ZZH\Documents\Obsidian Vault\Wiki\Wiki\"
+```
+triggers 无命中再全文搜索：
+```
+Grep -ri "<关键词>" "C:\Users\ZZH\Documents\Obsidian Vault\Wiki\Wiki\"
 ```
 
-#### 15.5 赛道分类
+#### 15.5 赛道分类（Obsidian Wiki 映射）
 
 ```
-ctf-kb/
-├── web/               # Web 安全
+Wiki/
+├── web/               # Web 安全（607 条含 GHSA）
 ├── crypto/            # 密码学
 ├── reverse/           # 逆向工程
 ├── pwn/               # 二进制漏洞利用
@@ -348,12 +367,10 @@ ctf-kb/
 ├── osint/             # 开源情报
 ├── malware/           # 恶意软件分析
 ├── ai-ml/             # AI 安全
-├── network-audit/     # 网络审计
 ├── cloud-security/    # 云安全
-├── mobile-security/   # 移动安全
-├── ics-scada/         # 工控安全
-├── harmonyos-android/ # 鸿蒙/安卓逆向
-└── code-audit/        # 代码审计
+├── code-audit/        # 代码审计（876 条含 GHSA + CVE）
+├── ctf/               # CTF 比赛实体页
+└── rules/             # 规则文件
 ```
 
 #### 15.6 检索指令
@@ -383,14 +400,16 @@ Batch 1（并行）：
 #### 步骤 1：知识库关键词匹配（如侦察中发现产品名/版本号/CVE）
 
 ```bash
-Grep -i "(关键词|版本号|CVE编号)" "C:\Users\ZZH\.trae\ctf-kb\" -l
+Grep -i "triggers:.*(关键词|版本号|CVE编号)" "C:\Users\ZZH\Documents\Obsidian Vault\Wiki\Wiki\" -l
 ```
 
-ctf-kb 当前 1567 条记录，覆盖：
-- `web/`（607 条）：GHSA 注入/XSS/SSRF/认证绕过 + 历史做题经验
-- `code-audit/`（876 条）：200+ 产品级漏洞复现（Confluence/GitLab/Nexus/F5/禅道/XXL-JOB...）
-- `cloud-security/`（28 条）：K8s/Docker 逃逸/未授权
-- `crypto/`（20 条）：GHSA 加密 + 历史做题经验
+Wiki 当前 217 页，覆盖：
+- `web/`：GHSA 注入/XSS/SSRF/认证绕过 + 历史做题经验 + AICTF 冠军实录
+- `code-audit/`：200+ 产品级漏洞复现（Confluence/GitLab/Nexus/F5/禅道/XXL-JOB...）
+- `cloud-security/`：K8s/Docker 逃逸/未授权
+- `crypto/`：GHSA 加密 + 历史做题经验
+- `pwn/`：ret2win/UAF/堆利用/WASM/V8 逃逸
+- `rules/`：全局规则 + Skill 目录 + 启动提示词
 
 **命中匹配** → 先读匹配到的 md 文件，提取利用链再动手。不读就动手 = 浪费时间。
 
@@ -484,10 +503,15 @@ Web 题软件指纹必写。输出格式简洁，不写长篇分析。
 触发知识库检索时，优先搜 `triggers` 字段：
 
 ```
-Grep "triggers:.*<关键词>" "c:\Users\ZZH\.trae\ctf-kb\"
+Grep -i "triggers:.*<关键词>" "C:\Users\ZZH\Documents\Obsidian Vault\Wiki\Wiki\"
 ```
 
-命中则该页的 `tags` 和 `related` 字段指示进一步探索方向。
+triggers 无命中再全文搜索：
+```
+Grep -ri "<关键词>" "C:\Users\ZZH\Documents\Obsidian Vault\Wiki\Wiki\"
+```
+
+命中则该页的 `tags` 和 `[[wikilinks]]` 指示进一步探索方向。
 
 ---
 
