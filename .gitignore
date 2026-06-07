@@ -1,0 +1,24 @@
+# Obsidian workspace (machine-specific)
+.obsidian/workspace.json
+.obsidian/workspace
+
+# Downloaded images/attachments
+raw/assets/*
+!raw/assets/.gitkeep
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temp files
+~$*
+*.swp
+*.swo
+
+# Git
+*.orig
