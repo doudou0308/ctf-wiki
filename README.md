@@ -2,23 +2,23 @@
   <img src="https://img.shields.io/badge/Obsidian-7C3AED?style=flat&logo=obsidian&logoColor=white"/>
   <img src="https://img.shields.io/badge/CTF%20Wiki-v1.0-22c55e?style=flat"/>
   <img src="https://img.shields.io/badge/LLM%20Ready-Yes-3b82f6?style=flat"/>
-  <img src="https://img.shields.io/badge/pages-231%2B-f59e0b?style=flat"/>
+  <img src="https://img.shields.io/badge/pages-238%2B-f59e0b?style=flat"/>
 </p>
 
 # CTF Wiki 🛡️
 
-**一个面向 LLM Agent 的 CTF 知识图谱** — 基于 [karpathy/LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) 三层架构搭建，覆盖 **11 个赛道、231+ 个 markdown 文件**，在日常 CTF 竞赛与安全研究中持续迭代更新。
+**一个面向 LLM Agent 的 CTF 知识图谱** — 基于 [karpathy/LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) 三层架构搭建，覆盖 **11 个赛道、238+ 个 markdown 文件**，在日常 CTF 竞赛与安全研究中持续迭代更新。
 
 ## 快速一览
 
 | 统计项 | 数值 |
 |--------|------|
-| 命名技术/赛题页 | 97 页 |
+| 命名技术/赛题页 | 101 页 |
 | Skill 深度参考（含 PoC 代码） | 99 个 |
 | Command 解题指南 | 11 个 |
 | GHSA 概念合成页 | 8 张（覆盖 ~1124 条目） |
 | CVE 产品漏洞索引 | 2 张（覆盖 ~400 个 CVE） |
-| **总计** | **~231+ 个文件** |
+| **总计** | **~238+ 个文件** |
 
 ## 覆盖赛道
 
@@ -26,10 +26,10 @@
 ├── Web             │  30+ 页  — SQLi, SSTI, SSRF, JWT, 反序列化, XSS, 原型链...
 ├── Crypto          │  5 页   — RSA, ECC, 格, PRNG, ZKP, 流密码, 经典密码...
 ├── Pwn             │  6 页   — ret2win, UAF, ROP, 堆利用, 内核, 沙箱逃逸...
-├── Reverse         │  13 页  — APK, SMC, 字节码, PyInstaller, 固件...
+├── Reverse         │  16 页  — APK, SMC, 字节码, PyInstaller, 固件, VM, Ren'Py...
 ├── Forensics       │  6 页   — 隐写, 网络取证, 磁盘, 日志, 内存, 信号...
 ├── Misc            │  7 页   — 编码, PyJail, BashJail, 游戏, RF, DNS...
-├── AI-ML           │  14 页  — Agent 架构, Prompt 注入, 模型攻击...
+├── AI-ML           │  15 页  — Agent 架构, Prompt 注入, 模型攻击, LWE...
 ├── Cloud Security  │  5 页   — 容器逃逸, K8s, Nacos, vCenter, MinIO...
 ├── Code Audit      │  15 页  — CVE 模式, OWASP Top 10, 产品漏洞索引...
 ├── Malware         │  Skill  — C2 协议, PE/.NET, 反混淆, shellcode...
