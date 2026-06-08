@@ -1,4 +1,8 @@
 <p align="center">
+  <img src="repo-banner.png" alt="CTF Wiki Banner" width="100%"/>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Obsidian-7C3AED?style=flat&logo=obsidian&logoColor=white"/>
   <img src="https://img.shields.io/badge/CTF%20Wiki-v1.0-22c55e?style=flat"/>
   <img src="https://img.shields.io/badge/LLM%20Ready-Yes-3b82f6?style=flat"/>
