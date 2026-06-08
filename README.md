@@ -88,18 +88,6 @@ git clone https://github.com/doudou0308/ctf-wiki.git
 3. 更新 index.md + log.md
 ```
 
-## 💡 建议 GitHub 仓库设置
-
-这些需要你在仓库 Settings 页面手动配置：
-
-| 设置项 | 推荐值 |
-|--------|--------|
-| **Description** | `面向 LLM Agent 的 CTF 知识图谱 \| LLM-ready CTF Knowledge Graph built on Obsidian` |
-| **Website** | *(可选)* 启用 GitHub Pages 后设置为 `https://doudou0308.github.io/ctf-wiki/` |
-| **Topics** | `ctf` `cybersecurity` `wiki` `knowledge-base` `obsidian-md` `llm-agent` `capture-the-flag` `penetration-testing` |
-| **Social Preview** | 上传一张 1280×640 banner 图到仓库根目录 (如 `repo-banner.png`)，GitHub 会自动使用 |
-| **Template** | 不勾选 "Use as a template" |
-
 ---
 
 <a href="https://github.com/doudou0308/ctf-wiki/stargazers">
