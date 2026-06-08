@@ -42,4 +42,4 @@ for c in enc:
 ## Connections
 
 - Related: [[simple-smc]]
-- Related: [[windows-pe-sbox-xor]]
+- Related: [[rerere-windows-pe-sbox-xor]]

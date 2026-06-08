@@ -39,4 +39,4 @@ print(flag)
 CTF 逆向常见套路：查表替换(S-BOX) + XOR。逆向 S-BOX 直接用 dict 反向映射。
 
 ## Connections
-- Related: [[skills-reverse-tools]] (静态分析)
+- Related: [[skill-tools]] (静态分析)

@@ -90,7 +90,7 @@ print(flag)
 Flag: `flag{9e4bec648f840152b7e868c28f5243eb}`
 
 ## Connections
-- Related: [[template-injection-general]] (future page)
+- Related: *(template-injection-general — 待创建)*
 - Related: [[just-proto]] (原型污染 + 命令注入类似链)
 - GHSA: [[web/ghsa-rce-overview]] (模板注入 → RCE)
-- Source: [[raw/ctf-solutions/WEB-TaxSystem_SSTI/writeup]]
+- Source: *(raw/ctf-solutions/WEB-TaxSystem_SSTI/writeup — 待创建)*

@@ -3,7 +3,7 @@
 ## 架构
 
 Skill 包基于 `ljagiello/ctf-skills`（v2.x），全部在 `c:\Users\ZZH\.trae\skills\`。
-知识库在 Obsidian Wiki：`C:\Users\ZZH\Documents\Obsidian Vault\Wiki\Wiki\`（217 页，YAML frontmatter + `[[wikilinks]]`）。
+知识库在 Obsidian Wiki：`C:\Users\ZZH\Documents\Obsidian Vault\Wiki\Wiki\`（217 页，YAML frontmatter + wikilinks）。
 Docker 工具容器：`ctf-box`（持久化，挂载 `/work` → 工作目录，`/wiki` → 知识库）。
 
 ## 核心原则：Flag 即终点
@@ -511,7 +511,7 @@ triggers 无命中再全文搜索：
 Grep -ri "<关键词>" "C:\Users\ZZH\Documents\Obsidian Vault\Wiki\Wiki\"
 ```
 
-命中则该页的 `tags` 和 `[[wikilinks]]` 指示进一步探索方向。
+命中则该页的 `tags` 和 wikilinks 指示进一步探索方向。
 
 ---
 

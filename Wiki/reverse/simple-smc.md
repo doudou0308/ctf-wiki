@@ -33,4 +33,4 @@ SMC 双层 XOR 解密 + GF(2) 线性变换矩阵求逆。使用函数序言 `55 
 ## Connections
 
 - Related: [[caesar-rc4-leet-speak]]
-- Related: [[windows-pe-sbox-xor]]
+- Related: [[rerere-windows-pe-sbox-xor]]

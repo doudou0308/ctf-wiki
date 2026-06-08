@@ -2,7 +2,7 @@
 title: Activity Log
 tags: [meta, log]
 created: 2026-06-07
-updated: 2026-06-07
+updated: 2026-06-08
 ---
 
 # Activity Log
@@ -11,7 +11,7 @@ Chronological record of all operations on the wiki.
 
 ## [2026-06-07 19:18] init | LLM Wiki Methodology
 
-- Initialized wiki structure based on [[LLM Wiki]] methodology
+- Initialized wiki structure based on [[../LLM Wiki]] methodology
 - Created `raw/` directory for source documents
 - Created `wiki/` directory for wiki pages
 - Created `AGENTS.md` with schema and workflow definitions
@@ -24,8 +24,8 @@ Chronological record of all operations on the wiki.
 ## [2026-06-07 19:35] ingest | 第二届梨花杯wp
 
 - Read source: `raw/第二届梨花杯wp.md`
-- Created [[summary--第二届梨花杯wp]] — 7 道 CTF 题解概要
-- Created [[ctf-梨花杯-2026]] — 竞赛实体页
+- Created `summary--第二届梨花杯wp` — 7 道 CTF 题解概要 *(页面已移除)*
+- Created `ctf-梨花杯-2026` — 竞赛实体页 *(页面已移除)*
 - Updated [[index]] with new entries
 
 ---
@@ -214,7 +214,7 @@ Synthesized 1124 GHSA entries into 8 curated concept pages organized by vulnerab
 - [[reverse/des-apk-rodata]] — 补全多层 DEX 架构图（classes3.dex → assets/classes3.dex → Native）、smali 代码分析（wide.verify / wide.callNativeMethod）、Native 函数地址表、DES-ECB 验证逻辑伪代码、hex 逐字节解码示例
 
 **raw 中已有档案不变：**
-- `raw/第二届梨花杯wp.md` — 已在 Phase 0 摄入到 [[ctf-梨花杯-2026]] + [[summary--第二届梨花杯wp]]
+- `raw/第二届梨花杯wp.md` — 已在 Phase 0 摄入到 `ctf-梨花杯-2026` + `summary--第二届梨花杯wp` *(页面已移除)*
 - `raw/ctf-solutions/CrackMe_2_3/` — 完整 Writeup + solve.py + output.txt
 - `raw/ctf-solutions/WEB-TaxSystem_SSTI/` — 完整 Writeup + 17 个 exploit 脚本 + tax.db
 
@@ -262,3 +262,42 @@ Synthesized 1124 GHSA entries into 8 curated concept pages organized by vulnerab
 **更新：** index.md（101 命名页 + 3 条记录）、log.md
 
 **更新：** AGENTS.md（含 ctf/ 子目录）、index.md（新增 Web 4 页 + CTF Competitions + Source Summaries 分区）、log.md
+
+---
+
+## [2026-06-08 19:00] ingest | 2026 软件系统安全赛 初赛 WP → wiki
+
+**来源：** `raw/2026 软件系统安全赛 初赛 wp.md`（mp.weixin.qq.com Spirit Team）
+
+**5 个新建技术页：**
+- [[web/file-protocol-redis-crlf-pickle-rce]] — file:// SSRF → Redis CRLF 协议注入 → RestrictedUnpickler 绕过 Pickle RCE
+- [[web/thymeleaf-ssti-fragment-expression]] — Thymeleaf `__|$${...}|__::.x` fragment expression 绕过 + 7z SUID 提权
+- [[crypto/prng-state-recovery]] — Java Random 48-bit LCG 状态恢复 + 密码预测
+- [[misc/behinder-traffic-decryption]] — 冰蝎 AES-ECB Filter 注入 + AES-GCM C2 流量解密
+- [[misc/png-idat-dp-repair]] — PNG IDAT 损坏 DP 对齐修复 + LSB + ZIP CRC32 爆破 + 零宽字符
+
+**竞赛实体页：**
+- [[ctf/2026-software-security-competition-qualifier]] — 2026 软件系统安全赛初赛 7 题 WP（Web/Pwn/Misc/Re/Crypto 全赛道 AK）
+
+**关键新技术点：**
+- `RestrictedUnpickler` 白名单绕过 — 只放行 `getattr` 仍可通过 `OnlineUser.__init__.__globals__` 拿到 `os.system`
+- `file://` SSRF → Redis CRLF 注入 — 将 avatar_url HTTP 请求重定向到 127.0.0.1:6379 写恶意键
+- XMLRPC 隐蔽 RCE — `/proc/<pid>/cmdline` 遍历子进程发现硬编码 token 的 XMLRPC 服务
+- Thymeleaf 高版本 SSTI 绕过 — `${...}` 被拦截后用预处理字面量 `__|$${...}|__::.x` 拼接
+- 7z SUID 读文件 — `7z a -ttar -an -so /flag` 输出到 stdout
+- PNG IDAT DP 修复 — 动态规划枚举 filter_byte 偏移量最大化合法行数
+
+**更新：** index.md（+6 页，ingested: 223）、log.md
+
+---
+
+## [2026-06-08 19:10] lint | index↔disk 核对修复
+
+- **Broken link 修复**: `[[raw/LitCTF 2026 WEB方向全WP]]` → 原始文件不存在，改为 `*(raw/LitCTF 2026 WEB方向全WP)* | *(已摄入，原始文件已移除)*`
+- **10 个 orphan skill 文件补入 index.md**:
+  - PWN: `skill-advanced-exploits-2/3/4`（拆开 `~` range）
+  - Reverse: `skill-patterns-ctf`, `skill-patterns-ctf-2`, `skill-patterns-runtime`, `skill-languages-platforms`
+  - Misc: `skill-games-and-vms-2/3`
+  - OSINT: `skill-geolocation-and-media`
+- **所有 `~` range 展开为逐行**: PWN advanced-exploits, Reverse patterns/languages/platforms, Misc games-and-vms
+- **ingested 计数修正**: 223 → 221（排除 index + log）

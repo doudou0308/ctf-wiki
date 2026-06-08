@@ -2,8 +2,8 @@
 title: Wiki Index
 tags: [meta, index]
 created: 2026-06-07
-updated: 2026-06-07
-ingested: 217
+updated: 2026-06-08
+ingested: 221
 ---
 
 # Wiki Index
@@ -21,7 +21,7 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 
 | Page | Summary | Updated |
 |------|---------|---------|
-| [[ctf-梨花杯-2026]] | 第二届梨花杯 CTF 竞赛概况 | 2026-06-07 |
+| ~~ctf-梨花杯-2026~~ | *(待创建)* 第二届梨花杯 CTF 竞赛概况 | 2026-06-07 |
 
 ## Web
 
@@ -55,6 +55,8 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 | [[web/mako-ssti-code-block-bypass]] | SSTI | Mako `<% %>` 代码块 + getattr() 反射绕过 WAF |
 | [[web/go-reverse-jwt-key-extraction]] | JWT | Go 二进制逆向提取 JWT HS256 密钥 + BurpSuite JWT Editor 伪造 |
 | [[web/kkfileview-arbitrary-file-read]] | LFI | 前端 JS 泄露凭证 + kkFileView Base64 urlPath 任意文件读 |
+| [[web/file-protocol-redis-crlf-pickle-rce]] | SSRF | file:// SSRF → Redis CRLF 协议注入 → Pickle 反序列化 RCE |
+| [[web/thymeleaf-ssti-fragment-expression]] | SSTI | Thymeleaf `__\|$${...}\|__::.x` fragment expression 绕过 → RCE |
 
 ## Crypto
 
@@ -66,6 +68,7 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 | [[crypto/cpa-side-channel-aes]] | CPA 功耗分析恢复 AES-128 密钥 |
 | [[crypto/ghsa-crypto-weakness]] | GHSA 加密/随机数漏洞合集（~15 篇） |
 | [[crypto/hastad-coppersmith-linear-padding]] | Hastad Broadcast + Coppersmith 线性填充 RSA |
+| [[crypto/prng-state-recovery]] | Java Random 48-bit LCG 状态恢复 + 密码预测 |
 
 ## PWN
 
@@ -74,7 +77,7 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 | [[pwn/ret2win]] | gets() 栈溢出 → backdoor → system("/bin/sh") |
 | [[pwn/ret2text-stack-alignment]] | No PIE 栈溢出 + movaps 栈对齐 |
 | [[pwn/heap-uaf-fastbin-overlap]] | UAF → Fastbin Overlap → 函数指针劫持 |
-| [[pwn/docker-container-pentest]] | Docker 容器 flag 定位与提取 |
+| [[cloud-security/docker-container-pentest]] | Docker 容器 flag 定位与提取 |
 | [[pwn/stack-shellcode-injection]] | NX 关闭 → 栈溢出 + shellcode 注入 execve("/bin/sh") |
 | [[pwn/jinqi-easy-wasm-v8-sandbox-bypass]] | V8 Wasm GC ref.test 类型混淆 → addrof/fakeobj → JIT RWX shellcode 执行 |
 
@@ -114,6 +117,8 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 | [[misc/maze-nested-zip]] | 嵌套压缩包 + 非标准 Base64 干扰字符 |
 | [[misc/office-love-multi-stego]] | Word/PDF/PPTX 多载体嵌套隐写 |
 | [[misc/aictf-supply-chain-poisoning]] | npm/pip 供应链投毒场景分析 |
+| [[misc/behinder-traffic-decryption]] | 冰蝎 AES Flow 流量解密 + AES-GCM C2 协议还原 |
+| [[misc/png-idat-dp-repair]] | PNG IDAT 损坏 DP 对齐修复 + ZIP CRC32 爆破 + 零宽字符 |
 
 ## AI / ML
 
@@ -170,7 +175,7 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 
 | Page | Summary | Updated |
 |------|---------|---------|
-| [[summary--第二届梨花杯wp]] | 7 道 CTF 题解（5 Web + 2 Crypto） | 2026-06-07 |
+| ~~summary--第二届梨花杯wp~~ | *(待创建)* 7 道 CTF 题解（5 Web + 2 Crypto） | 2026-06-07 |
 
 ## Synthesis & Comparisons
 
@@ -195,7 +200,11 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 | [[pwn/skill-heap-techniques.md]] | House 系列（Apple2/Einherjar/Orange/Lore/Force）|
 | [[pwn/skill-heap-techniques-2.md]] | CTF-Writeup 堆变体（UAF vtable/tcache 中毒/FSOP）|
 | [[pwn/skill-heap-fsop.md]] | FILE 结构体（_IO_FILE）利用技术 |
-| [[pwn/skill-advanced-exploits.md]]~[[pwn/skill-advanced-exploits-5.md]] | 高级利用专题 1-5（VM/类型混淆/io_uring/Windows SEH/神经网络 OOB）|
+| [[pwn/skill-advanced-exploits.md]] | 高级利用专题 1（VM/类型混淆）|
+| [[pwn/skill-advanced-exploits-2.md]] | 高级利用专题 2（io_uring）|
+| [[pwn/skill-advanced-exploits-3.md]] | 高级利用专题 3（Windows SEH）|
+| [[pwn/skill-advanced-exploits-4.md]] | 高级利用专题 4（神经网络 OOB）|
+| [[pwn/skill-advanced-exploits-5.md]] | 高级利用专题 5 |
 | [[pwn/skill-sandbox-escape.md]] | 沙箱逃逸（自定义 VM/FUSE/CPU 模拟器注入）|
 | [[pwn/skill-kernel.md]] | Linux 内核利用基础（堆喷/栈溢出/modprobe_path）|
 | [[pwn/skill-kernel-techniques.md]] | 内核利用技术（tty_struct/SLUB/userfaultfd）|
@@ -236,9 +245,16 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 | [[reverse/skill-tools-advanced-2.md]] | 高级工具 2（GDB 脚本/Ghidra 脚本/pwndbg/GEF）|
 | [[reverse/skill-anti-analysis.md]] | 反分析分类（ptrace/PEB/CPUID/DBI/自修改）|
 | [[reverse/skill-anti-analysis-ctf.md]] | CTF 反分析 Writeup 技巧 |
-| [[reverse/skill-patterns.md]]~[[reverse/skill-patterns-ctf-3.md]] | 二进制模式 1-5（自定义 VM/SMC/XOR/Go/Rust）|
-| [[reverse/skill-languages.md]]~[[reverse/skill-languages-compiled.md]] | 语言特定逆向 1-3（Python/Go/Rust/Swift/Kotlin）|
-| [[reverse/skill-platforms.md]]~[[reverse/skill-platforms-hardware.md]] | 平台逆向（macOS/IoT/内核驱动/ARM64/RISC-V）|
+| [[reverse/skill-patterns.md]] | 二进制模式 1（自定义 VM）|
+| [[reverse/skill-patterns-ctf.md]] | 二进制模式 2（SMC/XOR）|
+| [[reverse/skill-patterns-ctf-2.md]] | 二进制模式 3（Go/Rust）|
+| [[reverse/skill-patterns-ctf-3.md]] | 二进制模式 4 |
+| [[reverse/skill-patterns-runtime.md]] | 二进制模式 5（运行时分析）|
+| [[reverse/skill-languages.md]] | 语言特定逆向 1（Python）|
+| [[reverse/skill-languages-platforms.md]] | 语言特定逆向 2（Go/Rust/Swift/Kotlin）|
+| [[reverse/skill-languages-compiled.md]] | 语言特定逆向 3（编译型语言）|
+| [[reverse/skill-platforms.md]] | 平台逆向 1（macOS/IoT/内核驱动）|
+| [[reverse/skill-platforms-hardware.md]] | 平台逆向 2（ARM64/RISC-V）|
 | [[reverse/skill-field-notes.md]] | Reverse 速查笔记 |
 
 ### Forensics
@@ -272,7 +288,10 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 | [[misc/skill-encodings-advanced.md]] | 高级编码（Verilog/Gray/RTF/SMS PDU）|
 | [[misc/skill-rf-sdr.md]] | RF/SDR/IQ 信号（QAM-16/载波恢复）|
 | [[misc/skill-dns.md]] | DNS 攻击（ECS/NSEC/IXFR/Rebinding/Tunneling）|
-| [[misc/skill-games-and-vms.md]]~[[misc/skill-games-and-vms-4.md]] | 游戏/VM 专题 1-4（WASM/Roblox/Z3/Emulator/多阶段）|
+| [[misc/skill-games-and-vms.md]] | 游戏/VM 专题 1（WASM/Roblox）|
+| [[misc/skill-games-and-vms-2.md]] | 游戏/VM 专题 2（Z3/Emulator）|
+| [[misc/skill-games-and-vms-3.md]] | 游戏/VM 专题 3（多阶段）|
+| [[misc/skill-games-and-vms-4.md]] | 游戏/VM 专题 4 |
 | [[misc/skill-linux-privesc.md]] | Linux 提权（Sudo/PostgreSQL/NFS/SSH 隧道）|
 | [[misc/skill-ctfd-navigation.md]] | CTFd 平台 API 导航 |
 
@@ -301,6 +320,7 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 |------|---------|
 | [[osint/skill-SKILL.md]] | OSINT 入口速查 |
 | [[osint/skill-social-media.md]] | 社交媒体 OSINT（Twitter/Tumblr/BlueSky/Discord）|
+| [[osint/skill-geolocation-and-media.md]] | 地理定位与媒体 OSINT |
 | [[osint/skill-web-and-dns.md]] | Web/DNS OSINT（Google Dorking/DNS/Wayback/MHOIS）|
 
 ### Code Audit
@@ -342,10 +362,10 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 
 | Page | Summary |
 |------|---------|
-| [[raw/ctf-solutions/CrackMe_2_3/writeup]] | DES 加密验证 APK 逆向 Writeup |
-| [[raw/ctf-solutions/WEB-TaxSystem_SSTI/writeup]] | SSTI 税务系统 Writeup |
-| [[raw/第二届梨花杯wp]] | 第二届梨花杯竞赛 WP（已摄入） |
-| [[raw/LitCTF 2026 WEB方向全WP]] | LitCTF 2026 Web 5题 WP（已摄入） |
+| *(raw/ctf-solutions/CrackMe_2_3/writeup)* | *(待创建)* DES 加密验证 APK 逆向 Writeup |
+| *(raw/ctf-solutions/WEB-TaxSystem_SSTI/writeup)* | *(待创建)* SSTI 税务系统 Writeup |
+| *(raw/第二届梨花杯wp)* | *(待创建)* 第二届梨花杯竞赛 WP（已摄入） |
+| *(raw/LitCTF 2026 WEB方向全WP)* | *(已摄入，原始文件已移除)* |
 
 ## CTF Competitions（竞赛实体页）
 
@@ -353,6 +373,7 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 |------|---------|
 | [[ctf/litctf-2026]] | LitCTF 2026 — 宽字节注入/Mako SSTI/Go逆向JWT/kkFileView/Shiro GCM 5题 WP |
 | [[ctf/changchengbei-2026]] | 第三届长城杯 — Ren'Py/自定义VM/Unity IL2CPP/LWE CNN 4题 WP |
+| [[ctf/2026-software-security-competition-qualifier]] | 2026 软件系统安全赛初赛 — Web/Pwn/Misc/Re/Crypto 全赛道 AK 7题 WP |
 
 ## Source Summaries
 
@@ -363,4 +384,4 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 
 ---
 
-*Last updated: 2026-06-07 | Total pages: ~238+（101 命名页 + 99 skill 参考 + 11 command 参考 + 7 rules + 2 raw + 3 code-audit extras + 10 synthesis/index + 3 summary）*
+*Last updated: 2026-06-08 | Total pages: ~244+（107 命名页 + 99 skill 参考 + 11 command 参考 + 7 rules + 2 raw + 3 code-audit extras + 10 synthesis/index + 3 summary）*

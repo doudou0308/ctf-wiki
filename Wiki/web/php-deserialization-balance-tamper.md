@@ -38,4 +38,4 @@ curl -b cookie.txt -X POST http://target/buy.php -d 'item=flag'
 ## Connections
 
 - Related: [[php-file-inclusion-filter]]
-- Related: [[java-deserialization]] (future page)
+- Related: *(java-deserialization — 待创建)*
