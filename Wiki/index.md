@@ -2,8 +2,8 @@
 title: Wiki Index
 tags: [meta, index]
 created: 2026-06-07
-updated: 2026-06-08
-ingested: 221
+updated: 2026-06-09
+ingested: 227
 ---
 
 # Wiki Index
@@ -57,6 +57,8 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 | [[web/kkfileview-arbitrary-file-read]] | LFI | 前端 JS 泄露凭证 + kkFileView Base64 urlPath 任意文件读 |
 | [[web/file-protocol-redis-crlf-pickle-rce]] | SSRF | file:// SSRF → Redis CRLF 协议注入 → Pickle 反序列化 RCE |
 | [[web/thymeleaf-ssti-fragment-expression]] | SSTI | Thymeleaf `__\|$${...}\|__::.x` fragment expression 绕过 → RCE |
+| [[web/flask-unsign-session-forgery]] | Session | Flask-unsign session 伪造 (`/proc/self/environ` → secret_key) |
+| [[web/iconv-encoding-bypass-path-traversal]] | WAF Bypass | iconv `//IGNORE` 编码转换绕过路径黑名单 |
 
 ## Crypto
 
@@ -374,6 +376,10 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 | [[ctf/litctf-2026]] | LitCTF 2026 — 宽字节注入/Mako SSTI/Go逆向JWT/kkFileView/Shiro GCM 5题 WP |
 | [[ctf/changchengbei-2026]] | 第三届长城杯 — Ren'Py/自定义VM/Unity IL2CPP/LWE CNN 4题 WP |
 | [[ctf/2026-software-security-competition-qualifier]] | 2026 软件系统安全赛初赛 — Web/Pwn/Misc/Re/Crypto 全赛道 AK 7题 WP |
+| [[ctf/changchengbei-awdp-2026-semi]] | 2026 长城杯 AWDP 半决赛 — 西南地区 Web (iconv bypass + ZipSlip) |
+| [[ctf/actf-2025]] | 2025 ACTF Web 复现 — Flask session 伪造/SQLi→SSTI/Pandoc 注入 |
+| [[ctf/anxunbei-wp]] | 安洵杯部分 WP — Bash 限制绕过/堆利用/Coppersmith/SMC/取证 |
+| [[ctf/newstar-2025]] | NewStar CTF 2025 Web 全4周 — 从 robots.txt 到 POP 链 (17 题) |
 
 ## Source Summaries
 
@@ -384,4 +390,4 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 
 ---
 
-*Last updated: 2026-06-08 | Total pages: ~244+（107 命名页 + 99 skill 参考 + 11 command 参考 + 7 rules + 2 raw + 3 code-audit extras + 10 synthesis/index + 3 summary）*
+*Last updated: 2026-06-09 | Total pages: ~256+（113 命名页 + 99 skill 参考 + 11 command 参考 + 7 rules + 2 raw + 3 code-audit extras + 10 synthesis/index + 5 summary）*

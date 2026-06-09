@@ -301,3 +301,27 @@ Synthesized 1124 GHSA entries into 8 curated concept pages organized by vulnerab
   - OSINT: `skill-geolocation-and-media`
 - **所有 `~` range 展开为逐行**: PWN advanced-exploits, Reverse patterns/languages/platforms, Misc games-and-vms
 - **ingested 计数修正**: 223 → 221（排除 index + log）
+
+---
+
+## [2026-06-09 22:00] ingest | 6 篇 raw 文档 → wiki
+
+**来源：**
+- `raw/2025 ACTF Web 复现.md`（妙尽璇机, 安全KER）
+- `raw/2026长城杯AWDP半决赛WP(西南地区WEB) - Rycarls little blog.md`
+- `raw/NewStar-web week1-2 - Rycarls little blog.md`
+- `raw/NewStar_Week3_Web - Rycarls little blog.md`
+- `raw/Newstar web week4 - Rycarls little blog.md`
+- `raw/安洵杯部分WP-安全KER - 安全资讯平台.md`
+
+**5 个新建竞赛实体页：**
+- [[ctf/actf-2025]] — ACTF 2025 Web 3 题（Flask 命令注入 + 邮件 SSTI + Pandoc 注入）
+- [[ctf/changchengbei-awdp-2026-semi]] — 长城杯 AWDP 半决赛西南 Web（iconv bypass + ZipSlip + SSRF）
+- [[ctf/newstar-2025]] — NewStar CTF 2025 Web 全4周 17 题（从 robots.txt 到 POP 链）
+- [[ctf/anxunbei-wp]] — 安洵杯部分 WP（Bash 限制绕过 / 堆利用 / Coppersmith / SMC / 取证）
+
+**2 个新建技术页：**
+- [[web/flask-unsign-session-forgery]] — `/proc/self/environ` 泄露 secret_key → `flask-unsign` 伪造 admin session
+- [[web/iconv-encoding-bypass-path-traversal]] — iconv `//IGNORE` 编码转换丢弃非法字节绕过路径黑名单
+
+**更新：** index.md（+6 页，ingested: 227）、log.md
