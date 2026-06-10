@@ -325,3 +325,17 @@ Synthesized 1124 GHSA entries into 8 curated concept pages organized by vulnerab
 - [[web/iconv-encoding-bypass-path-traversal]] — iconv `//IGNORE` 编码转换丢弃非法字节绕过路径黑名单
 
 **更新：** index.md（+6 页，ingested: 227）、log.md
+
+---
+
+## [2026-06-10 22:00] ingest | 百道CTF刷题记录(一) → wiki
+
+**来源：** `raw/百道CTF刷题记录(一).md`（Yunen, 2019）
+
+**新建页面：**
+- [[web/shiyanbar-ctf-brushing-01]] — Shiyanbar 平台 11 题刷题录，覆盖 SQL 注入 (CBC 翻转/md5 绕过/报错注/布尔盲注/时间盲注/万能密码/sqli 绕过) + PHP 整数溢出 + `group by with rollup`
+
+**删除重复文件：**
+- 删除 `raw/安洵杯部分WP-安全KER - 安全资讯平台 1.md`（已摄入的重复文件）
+
+**更新：** index.md（+1 页，ingested: 228）、log.md

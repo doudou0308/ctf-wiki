@@ -2,8 +2,8 @@
 title: Wiki Index
 tags: [meta, index]
 created: 2026-06-07
-updated: 2026-06-09
-ingested: 227
+updated: 2026-06-10
+ingested: 228
 ---
 
 # Wiki Index
@@ -59,6 +59,7 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 | [[web/thymeleaf-ssti-fragment-expression]] | SSTI | Thymeleaf `__\|$${...}\|__::.x` fragment expression 绕过 → RCE |
 | [[web/flask-unsign-session-forgery]] | Session | Flask-unsign session 伪造 (`/proc/self/environ` → secret_key) |
 | [[web/iconv-encoding-bypass-path-traversal]] | WAF Bypass | iconv `//IGNORE` 编码转换绕过路径黑名单 |
+| [[web/shiyanbar-ctf-brushing-01]] | 刷题录 | Shiyanbar 11 题 — CBC 翻转/md5 绕过/报错注/sqli 绕过/PHP 溢出 |
 
 ## Crypto
 
@@ -390,4 +391,4 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 
 ---
 
-*Last updated: 2026-06-09 | Total pages: ~256+（113 命名页 + 99 skill 参考 + 11 command 参考 + 7 rules + 2 raw + 3 code-audit extras + 10 synthesis/index + 5 summary）*
+*Last updated: 2026-06-10 | Total pages: ~257+（114 命名页 + 99 skill 参考 + 11 command 参考 + 7 rules + 2 raw + 3 code-audit extras + 10 synthesis/index + 5 summary）*
