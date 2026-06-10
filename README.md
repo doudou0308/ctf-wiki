@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/Obsidian-7C3AED?style=flat&logo=obsidian&logoColor=white"/>
   <img src="https://img.shields.io/badge/CTF%20Wiki-v1.0-22c55e?style=flat"/>
   <img src="https://img.shields.io/badge/LLM%20Ready-Yes-3b82f6?style=flat"/>
-  <img src="https://img.shields.io/badge/files-221-22c55e?style=flat"/>
+  <img src="https://img.shields.io/badge/files-240-22c55e?style=flat"/>
   <img src="https://img.shields.io/badge/license-MIT-blue?style=flat"/>
   <img src="https://img.shields.io/github/last-commit/doudou0308/ctf-wiki?style=flat&color=8b5cf6"/>
   <img src="https://img.shields.io/github/repo-size/doudou0308/ctf-wiki?style=flat&color=ec4899"/>
@@ -30,26 +30,27 @@ CTF Knowledge Graph for LLM Agents — Built on Karpathy's 3-Layer Wiki Architec
 
 | 统计项 | 数值 |
 |--------|------|
-| 命名技术/赛题页 | 107 页 |
-| Skill 深度参考（含 PoC 代码） | 99 个 |
+| 命名技术/赛题页 | 129 页 |
+| Skill 深度参考（含 PoC 代码） | 100 个 |
 | Command 解题指南 | 11 个 |
 | GHSA 概念合成页 | 8 张（覆盖 ~1124 条目） |
 | CVE 产品漏洞索引 | 2 张（覆盖 ~400 个 CVE） |
-| **总计** | **221 个 markdown 文件** |
+| **总计** | **240 个 markdown 文件** |
 
 ## 🗂️ Coverage
 
 | 赛道 | 容量 | 覆盖内容 |
 |------|------|---------|
-| **Web** | 30+ 页 | SQLi, SSTI, SSRF, JWT, 反序列化, XSS, 原型链, CSRF, 文件上传... |
-| **Crypto** | 5 页 | RSA (Wiener/Coppersmith), ECC, 格 (LLL), PRNG, ZKP, 流/经典密码... |
-| **Pwn** | 6 页 | ret2win, UAF, ROP, 堆利用 (House 系列), 内核, 沙箱逃逸... |
-| **Reverse** | 16 页 | APK, SMC, 字节码, PyInstaller, 固件, 自定义 VM, Ren'Py, Unity... |
-| **Forensics** | 6 页 | 隐写 (LSB/Arnold), 网络/磁盘/内存/日志取证, 信号分析... |
-| **Misc** | 7 页 | 编码, PyJail, BashJail, 游戏 (Z3), RF/SDR, DNS 攻击... |
+| **Web** | 33 页 | SQLi, SSTI, SSRF, JWT, 反序列化, XSS, 原型链, CSRF, 文件上传, 命令注入... |
+| **Cloud Security** | 9 页 | AWS S3/EBS/RDS, K8s IngressNightmare, MinIO, 腾讯云, 容器逃逸, Nacos, vCenter... |
+| **Crypto** | 7 页 | RSA (Wiener/Coppersmith), ECC, 格 (LLL), PRNG, ZKP, 流/经典密码... |
+| **Code Audit** | 16 页 | OWASP Top 10, CVE 模式, FastAdmin/ShowDoc/UEditor/XXL-JOB... |
 | **AI-ML** | 15 页 | Agent 架构, Prompt 注入, 对抗样本, 模型攻击, LWE... |
-| **Cloud Security** | 5 页 | 容器逃逸, K8s, Nacos, vCenter, MinIO, 数据库后渗透... |
-| **Code Audit** | 15 页 | OWASP Top 10, CVE 模式, FastAdmin/ShowDoc/UEditor... |
+| **Pwn** | 7 页 | 栈/堆利用 (House 系列), IO_FILE/FSOP, 内核, protobuf-c, 出题指南... |
+| **Reverse** | 12 页 | APK, SMC, 字节码, PyInstaller, 固件, 自定义 VM, Ren'Py, Unity IL2CPP... |
+| **CTF Competitions** | 15 页 | 长城杯/ACTF/NewStar/数字中国/安洵杯/软件安全赛/LitCTF 等竞赛实体索引 |
+| **Forensics** | 5 页 | 隐写 (LSB/Arnold), 网络/磁盘/内存/日志取证, 信号分析... |
+| **Misc** | 7 页 | 编码, PyJail, BashJail, 游戏 (Z3), RF/SDR, 冰蝎流量解密, PNG IDAT 修复... |
 | **Malware** | Skill | C2 协议, PE/.NET, 反混淆, shellcode, YARA... |
 | **OSINT** | Skill | 社交媒体, DNS, 地理定位, Google Dorking, Wayback... |
 
@@ -61,7 +62,7 @@ CTF Knowledge Graph for LLM Agents — Built on Karpathy's 3-Layer Wiki Architec
 ├── wiki/               # Wiki Layer — markdown 知识页面
 │   ├── index.md        # 目录索引（Agent 检索入口）
 │   ├── log.md          # 变更日志
-│   ├── {11个赛道}       # 按赛道子目录
+│   ├── {12个赛道}       # 按赛道子目录（含 ctf/ 竞赛实体页）
 │   └── ctf/            # 竞赛实体页
 ├── AGENTS.md           # Schema Layer — LLM Agent 工作规范
 └── LLM Wiki.md         # Karpathy 方法论原始文档
