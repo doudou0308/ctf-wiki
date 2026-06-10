@@ -18,6 +18,13 @@ CTF Knowledge Graph for LLM Agents — Built on Karpathy's 3-Layer Wiki Architec
 
 ---
 
+> **⚠️ 声明**  
+> 本 Wiki **面向 LLM/Agent 设计**，**不是**面向初学者的系统性教程。  
+> 内容侧重**关键考点与思路提示**，辅助 AI 在解题过程中快速匹配技术点，而非逐一讲解基础知识。  
+> 知识库处于**持续更新**状态，覆盖范围与内容深度会随新题源不断演进。
+
+---
+
 ## 📋 Features
 
 - **Agent-optimized** — 每页 `triggers` 字段让 LLM Agent 秒级定位相关知识点
