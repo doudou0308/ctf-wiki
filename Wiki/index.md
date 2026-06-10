@@ -3,7 +3,7 @@ title: Wiki Index
 tags: [meta, index]
 created: 2026-06-07
 updated: 2026-06-10
-ingested: 236
+ingested: 242
 ---
 
 # Wiki Index
@@ -112,6 +112,8 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 | [[forensics/log-forensics-attack-chain]] | Apache log + mod_dumpio 攻击链还原 |
 | [[forensics/multi-layer-steganography]] | Arnold 置乱 + LSB + 零宽字符 + PYC ROT/XOR 多层隐写 |
 | [[forensics/zip-encryption-png-ihdr-fix]] | WinZip AES 加密破解 + PNG IHDR 高度隐藏修复 |
+| [[ctf/otterctf-memory-forensics]] | OtterCTF 内存取证 1-13 全题 WP — Volatility 完整流程 |
+| [[ctf/r3ctf-2024-forensics]] | R3CTF 2024 Forensics 3题 — WSL磁盘/手机钓鱼/C2解密 |
 
 ## Misc
 
@@ -154,6 +156,10 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 | [[cloud-security/nacos-unauthorized-access]] | Nacos 未授权创建用户/查看配置 |
 | [[cloud-security/database-post-exploitation]] | MySQL/PostgreSQL/Redis/MSSQL 提权与 RCE 速查 |
 | [[cloud-security/cloud-cve-product-index]] | Docker/K8s/VMware/MinIO/Nacos 产品漏洞索引（28 个 CVE） |
+| [[cloud-security/pwnlabs-aws-cloud-security]] | AWS 云安全靶场实战 — S3 Account ID枚举/EBS快照挂载/RDS恢复 |
+| [[cloud-security/k8s-ingressnightmare-cve-2025-24513]] | K8s IngressNightmare 深度分析 — mirror-id注入/PID爆破 |
+| [[cloud-security/minio-cve-2025-31489-arbitrary-write]] | MinIO CVE-2025-31489 — 任意写桶/AI模型投毒 |
+| [[cloud-security/tencent-cloud-security-challenge-2025]] | 腾讯云安全挑战赛 — COS提权/CVM密码重置/AES-ECB凭证解密 |
 
 ## Code Audit
 
@@ -397,4 +403,4 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 
 ---
 
-*Last updated: 2026-06-10 | Total pages: ~263+（120 命名页 + 99 skill 参考 + 11 command 参考 + 7 rules + 2 raw + 3 code-audit extras + 10 synthesis/index + 5 summary）*
+*Last updated: 2026-06-10 | Total pages: ~271+（128 命名页 + 99 skill 参考 + 11 command 参考 + 7 rules + 2 raw + 3 code-audit extras + 10 synthesis/index + 5 summary）*

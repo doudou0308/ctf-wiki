@@ -358,3 +358,22 @@ Synthesized 1124 GHSA entries into 8 curated concept pages organized by vulnerab
 | [[ctf/changchengbei-final-protokms]] | 竞赛实体 | 长城杯决赛 protobuf-c KMS dangling pointer → House of Cat |
 
 **更新：** index.md（+6 页，ingested: 236）、log.md
+
+---
+
+## [2026-06-10 23:00] ingest | 7 篇云安全/Forensics 文章 → wiki
+
+**来源：** 先知社区 3 篇 + CSDN/R3CTF/个人博客 4 篇
+
+**新建页面：**
+
+| 页面 | 类型 | 内容 |
+|------|------|------|
+| [[cloud-security/pwnlabs-aws-cloud-security]] | 云安全 | AWS 云安全靶场 — S3 Account ID/EBS快照/RDS恢复 |
+| [[cloud-security/k8s-ingressnightmare-cve-2025-24513]] | 云安全 | K8s IngressNightmare CVE-2025-24513 分析 + mirror-id注入优化 |
+| [[cloud-security/minio-cve-2025-31489-arbitrary-write]] | 云安全 | MinIO CVE-2025-31489 任意写桶 + AI模型投毒场景 |
+| [[cloud-security/tencent-cloud-security-challenge-2025]] | 云安全 | 腾讯云安全挑战赛 — COS提权/CVM密码重置/Python SDK ForceStop |
+| [[ctf/otterctf-memory-forensics]] | Forensics | OtterCTF 内存取证 1-13 — Volatility lsadump/clipboard/procdump |
+| [[ctf/r3ctf-2024-forensics]] | Forensics | R3CTF 2024 Forensics 3题 — WSL磁盘/手机钓鱼/QuickLZ-C2解密 |
+
+**更新：** index.md（+6 页，ingested: 242）、log.md
