@@ -339,3 +339,22 @@ Synthesized 1124 GHSA entries into 8 curated concept pages organized by vulnerab
 - 删除 `raw/安洵杯部分WP-安全KER - 安全资讯平台 1.md`（已摄入的重复文件）
 
 **更新：** index.md（+1 页，ingested: 228）、log.md
+
+---
+
+## [2026-06-10 22:30] ingest | 7 篇 PWN 文章 → wiki
+
+**来源：** 先知社区 7 篇 PWN 文章
+
+**新建页面：**
+
+| 页面 | 类型 | 内容 |
+|------|------|------|
+| [[pwn/core-exploitation-techniques]] | 技术总结 | 栈/堆/IO_FILE/FSOP 通解模板 (glibc 2.23~2.35) |
+| [[pwn/pwn-challenge-design-guide]] | 出题指南 | Docker 部署/编译参数/xinetd 配置/常见问题 |
+| [[ctf/software-security-2026-semi-pwn]] | 竞赛实体 | 软件安全赛半决赛 Robo_admin AWDP |
+| [[ctf/digital-china-2026-pwn]] | 竞赛实体 | 数字中国 pwn 4 题 (keep_stack/hkobj 内核/odd-chat/neural) |
+| [[ctf/ciscn-changchengbei-2026-semi-awdp-pwn]] | 竞赛实体 | CISCN&长城杯半决赛 AWDP-PWN 4 题 |
+| [[ctf/changchengbei-final-protokms]] | 竞赛实体 | 长城杯决赛 protobuf-c KMS dangling pointer → House of Cat |
+
+**更新：** index.md（+6 页，ingested: 236）、log.md

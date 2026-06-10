@@ -3,7 +3,7 @@ title: Wiki Index
 tags: [meta, index]
 created: 2026-06-07
 updated: 2026-06-10
-ingested: 228
+ingested: 236
 ---
 
 # Wiki Index
@@ -83,6 +83,8 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 | [[cloud-security/docker-container-pentest]] | Docker 容器 flag 定位与提取 |
 | [[pwn/stack-shellcode-injection]] | NX 关闭 → 栈溢出 + shellcode 注入 execve("/bin/sh") |
 | [[pwn/jinqi-easy-wasm-v8-sandbox-bypass]] | V8 Wasm GC ref.test 类型混淆 → addrof/fakeobj → JIT RWX shellcode 执行 |
+| [[pwn/core-exploitation-techniques]] | PWN 核心利用手法归纳 — 栈/堆/IO_FILE/FSOP 通解模板 (glibc 2.23~2.35) |
+| [[pwn/pwn-challenge-design-guide]] | CTF Pwn 题目设计指南 — Docker 部署/编译参数/常见问题 |
 
 ## Reverse
 
@@ -381,6 +383,10 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 | [[ctf/actf-2025]] | 2025 ACTF Web 复现 — Flask session 伪造/SQLi→SSTI/Pandoc 注入 |
 | [[ctf/anxunbei-wp]] | 安洵杯部分 WP — Bash 限制绕过/堆利用/Coppersmith/SMC/取证 |
 | [[ctf/newstar-2025]] | NewStar CTF 2025 Web 全4周 — 从 robots.txt 到 POP 链 (17 题) |
+| [[ctf/software-security-2026-semi-pwn]] | 2026 软件安全赛半决赛 PWN — Robo_admin (格式字符串+off-by-one→House of Some) |
+| [[ctf/digital-china-2026-pwn]] | 2026 数字中国 PWN — keep_stack/hkobj 内核/odd-chat 整数溢出/neural AI + system RCE |
+| [[ctf/ciscn-changchengbei-2026-semi-awdp-pwn]] | 2026 CISCN&长城杯半决赛 AWDP-PWN — 4题 (House of Storm/Cat) |
+| [[ctf/changchengbei-final-protokms]] | 长城杯决赛渗透 PWN — protobuf-c KMS dangling pointer → UAF → House of Cat |
 
 ## Source Summaries
 
@@ -391,4 +397,4 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 
 ---
 
-*Last updated: 2026-06-10 | Total pages: ~257+（114 命名页 + 99 skill 参考 + 11 command 参考 + 7 rules + 2 raw + 3 code-audit extras + 10 synthesis/index + 5 summary）*
+*Last updated: 2026-06-10 | Total pages: ~263+（120 命名页 + 99 skill 参考 + 11 command 参考 + 7 rules + 2 raw + 3 code-audit extras + 10 synthesis/index + 5 summary）*
