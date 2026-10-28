@@ -13,8 +13,8 @@
 </p>
 
 <h1 align="center">CTF Wiki 🛡️</h1>
-<p align="center"><b>一个面向 LLM Agent 的 CTF 知识图谱</b><br/>
-CTF Knowledge Graph for LLM Agents — Built on Karpathy's 3-Layer Wiki Architecture</p>
+<p align="center"><b>一个面向 LLM Agent 的 CTF 知识库</b><br/>
+CTF knowledge base for LLM agents — organized as a three-layer wiki</p>
 
 ---
 
@@ -27,13 +27,15 @@ CTF Knowledge Graph for LLM Agents — Built on Karpathy's 3-Layer Wiki Architec
 
 ## 📋 Features
 
-- **Agent-optimized** — 每页 `triggers` 字段让 LLM Agent 秒级定位相关知识点
+- **Agent-optimized** — 利用页面中的 `triggers` 字段辅助检索相关知识点；检索效果取决于工具与查询
 - **Obsidian-native** — 完整 [[wikilink]] 交叉引用，`Ctrl+O` 随手搜索
-- **Full PoC included** — Skill 参考页含完整 Exploit 代码片段
-- **Multi-source synthesis** — 来自 CTF WP、GHSA、CVE、学术文章的交叉验证
-- **Continuous ingest** — 每场竞赛结束后快速摄入新知识
+- **Code references** — 部分参考页包含 PoC 或代码片段；运行前需确认适用条件
+- **Multi-source synthesis** — 整理来自 CTF WP、GHSA、CVE 和学术文章的资料；具体内容需结合原始来源核实
+- **Continuous ingest** — 根据可用资料持续整理与更新
 
 ## 📊 Stats
+
+以下为 README 记录的统计快照，随仓库更新可能变化。
 
 | 统计项 | 数值 |
 |--------|------|
@@ -75,7 +77,7 @@ CTF Knowledge Graph for LLM Agents — Built on Karpathy's 3-Layer Wiki Architec
 └── LLM Wiki.md         # Karpathy 方法论原始文档
 ```
 
-每页格式：`frontmatter` (含 `triggers` 字段) → `Key Points` → `Exploit` 代码 → `Connections` (交叉引用)。
+页面通常包含 `frontmatter`（包括 `triggers`）、知识要点和交叉引用，部分页面附有代码示例；具体结构以页面内容为准。
 
 ## 🚀 Quick Start
 
