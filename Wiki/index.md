@@ -3,7 +3,7 @@ title: Wiki Index
 tags: [meta, index]
 created: 2026-06-07
 updated: 2026-11-01
-ingested: 247
+ingested: 261
 ---
 
 # Wiki Index
@@ -185,6 +185,27 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 | [[code-audit/ghsa-privilege-escalation]] | GHSA 权限提升+反序列化（~50 篇） |
 | [[code-audit/ghsa-cloud-security]] | GHSA 容器/云/CI-CD 安全（~100 篇） |
 | [[code-audit/cve-product-index]] | CVE 产品漏洞索引 — 按产品线分类（~130 个产品） |
+
+## Source Indexes（外部语料索引）
+
+外部语料库 `Dest1ny-Sec/Des-CTF-Knowledge` 的 1027 篇比赛 WP 全量索引，按赛道 + 年份段拆分（每条 = 比赛 → 攻击链 → 关键 payload → 要义）。上层总览见 [[ctf/source-corpus--des-ctf-knowledge]]。
+
+| Page | 篇数 | 覆盖 |
+|------|------|------|
+| [[web/source-index--des-ctf-web-2017-2022]] | 98 | 82 场 |
+| [[web/source-index--des-ctf-web-2023-2024]] | 150 | 135 场 |
+| [[web/source-index--des-ctf-web-2025+]] | 67 | 64 场 |
+| [[pwn/source-index--des-ctf-pwn-2016-2022]] | 56 | 53 场 |
+| [[pwn/source-index--des-ctf-pwn-2023-2024]] | 94 | 80 场 |
+| [[pwn/source-index--des-ctf-pwn-2025+]] | 34 | 32 场 |
+| [[misc/source-index--des-ctf-misc-2014-2022]] | 78 | 60 场 |
+| [[misc/source-index--des-ctf-misc-2023-2024]] | 100 | 91 场 |
+| [[misc/source-index--des-ctf-misc-2025+]] | 41 | 37 场 |
+| [[reverse/source-index--des-ctf-reverse-2015-2022]] | 36 | 27 场 |
+| [[reverse/source-index--des-ctf-reverse-2023-2024]] | 76 | 60 场 |
+| [[reverse/source-index--des-ctf-reverse-2025+]] | 40 | 31 场 |
+| [[crypto/source-index--des-ctf-crypto]] | 120 | 105 场 |
+| [[forensics/source-index--des-ctf-forensics]] | 37 | 36 场 |
 
 ## Source Summaries
 
@@ -408,4 +429,4 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 
 ---
 
-*Last updated: 2026-11-01 | Total pages: ~276+（133 命名页 + 99 skill 参考 + 11 command 参考 + 7 rules + 2 raw + 3 code-audit extras + 10 synthesis/index + 6 summary）*
+*Last updated: 2026-11-01 | Total pages: ~290+（133 命名页 + 14 语料索引 + 99 skill 参考 + 11 command 参考 + 7 rules + 2 raw + 3 code-audit extras + 10 synthesis/index + 6 summary）*

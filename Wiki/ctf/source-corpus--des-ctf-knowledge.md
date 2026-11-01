@@ -19,6 +19,7 @@ sources: [https://github.com/Dest1ny-Sec/Des-CTF-Knowledge]
 ## Key Points
 
 - 该库的 WP 每篇 frontmatter 自带 `attack_chain`（解题链）、`key_payload`（关键 payload）、`lesson`（经验）——**这是最值钱的检索字段**
+- **1027 篇已全部索引化**：按赛道 + 年份段拆成 14 个索引页（见下表），每条压缩为「比赛 → 攻击链 → 关键 payload → 要义」，单页 13–43 KB，便于 Grep 命中
 - 本 wiki 新增 4 页基于它补缺：[[web/php-lfi-getshell-advanced]]、[[web/rce-bypass-techniques]]、[[web/file-upload-bypass]]、[[web/ssrf-protocol-weaponization]]
 - 引用规则：本 wiki 提到某技术时，若来自该库，需标注**原始比赛**（如「2022 羊城杯」），而非仅标注仓库名
 - 回源方式：GitHub 上按目录 `CTF大赛WP集合/articles/` 找 `<比赛>-*.full.md`
@@ -28,13 +29,32 @@ sources: [https://github.com/Dest1ny-Sec/Des-CTF-Knowledge]
 | 目录 | 内容 | 规模 |
 |------|------|------|
 | `*.md`（根目录 12 篇） | Web 漏洞体系化长文 | 约 24,000 行 |
-| `CTF大赛WP集合/articles/` | 比赛 WP（结构化 frontmatter） | **1005 篇 / 708 场** |
+| `CTF大赛WP集合/articles/` | 比赛 WP（结构化 frontmatter） | **1027 篇 / 723 场** |
 | `CTF常用脚本及工具/` | 场景化 exp 脚本 | 50+ 目录 |
 | `WP汇总/` | 靶场类 WP | — |
 | `工具使用/` | 工具手册 | — |
 | `AI-SEARCH-INDEX.md` | 作者自建的检索索引 | 1 篇 |
 
-WP 赛道分布（`category` 字段统计）：web 303 / misc 212 / pwn 180 / reverse 152 / crypto 120 / forensic 35 / 未标注 3。
+WP 赛道分布（`category` 字段统计）：web 315 / misc 219 / pwn 184 / reverse 152 / crypto 120 / forensic 37。
+
+### 已产出的赛道索引页（1027 篇全覆盖）
+
+| 赛道 | 索引页 | 篇数 |
+|------|--------|------|
+| Web | [[web/source-index--des-ctf-web-2017-2022]] | 98 |
+| Web | [[web/source-index--des-ctf-web-2023-2024]] | 150 |
+| Web | [[web/source-index--des-ctf-web-2025+]] | 67 |
+| PWN | [[pwn/source-index--des-ctf-pwn-2016-2022]] | 56 |
+| PWN | [[pwn/source-index--des-ctf-pwn-2023-2024]] | 94 |
+| PWN | [[pwn/source-index--des-ctf-pwn-2025+]] | 34 |
+| Misc | [[misc/source-index--des-ctf-misc-2014-2022]] | 78 |
+| Misc | [[misc/source-index--des-ctf-misc-2023-2024]] | 100 |
+| Misc | [[misc/source-index--des-ctf-misc-2025+]] | 41 |
+| Reverse | [[reverse/source-index--des-ctf-reverse-2015-2022]] | 36 |
+| Reverse | [[reverse/source-index--des-ctf-reverse-2023-2024]] | 76 |
+| Reverse | [[reverse/source-index--des-ctf-reverse-2025+]] | 40 |
+| Crypto | [[crypto/source-index--des-ctf-crypto]] | 120 |
+| Forensics | [[forensics/source-index--des-ctf-forensics]] | 37 |
 
 ### 12 篇长文的原始出处
 
@@ -89,5 +109,6 @@ WP 赛道分布（`category` 字段统计）：web 303 / misc 212 / pwn 180 / re
 
 ## Open Questions
 
-- 剩余 1005 篇 WP 尚未逐篇提炼；后续可按 `category` 分批（建议顺序：web → pwn → crypto → misc → reverse → forensic），每批生成 1 个赛道索引页而非逐篇建页。
-- 该库 WP 的 `contest` 字段有少量历史赛事与现名不一致（如「第八届强网杯」vs「强网杯 S8」），引用时需统一。
+- 索引层已覆盖全部 1027 篇，但每条仅有「一句攻击链 + 一条 payload」。对**多题且高频**的比赛（强网杯 / 春秋杯 / 网鼎杯 / 西湖论剑 / 长城杯），仍值得单独建 `ctf/<比赛>.md` 实体页展开细节。
+- 该库 WP 的 `contest` 字段有少量历史赛事与现名不一致（如「第八届强网杯」vs「强网杯 S8」），引用时需统一；索引页标题以原始 `contest` 为准。
+- 上游 `tags` 存在跨赛道噪声（如 Web 页出现 `ret2libc`），高频考点统计仅作检索线索，不代表真实赛道分布。

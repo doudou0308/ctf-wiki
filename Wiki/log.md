@@ -399,3 +399,24 @@ Synthesized 1124 GHSA entries into 8 curated concept pages organized by vulnerab
 **核验到的比赛归属：** pearcmd → 2022 羊城杯 / 2023 ACTF / 第八届强网杯；`.htaccess` → BuildCTF 2024 / 2024 长城杯初赛；`getallheaders()` 无参数 RCE → 2023 NKCTF / 2023 上海大学生赛；gopher+Redis → 2022 春秋杯春季赛；三语言调试器 → 2021 春秋杯秋季赛；LD_PRELOAD → 2022 USTC Hackergame；gopher+MySQL → ISITDTU 2018。
 
 **更新：** index.md（+5 页，ingested: 247）、log.md。剩余 1005 篇 WP 待按赛道分批提炼。
+
+---
+
+## [2026-11-01 22:20] ingest | Des-CTF-Knowledge 1027 篇 WP 全量索引
+
+**来源：** 同上（`CTF大赛WP集合/articles/`），实测 1027 篇 `.full.md` / 723 场比赛。
+
+**做法：** 脚本解析每篇 frontmatter（`contest / year / category / tags / one_liner / key_payload / lesson`），按赛道 + 年份段生成索引页，每条压缩为「比赛 → 攻击链 → 关键 payload → 要义」，单页控制在 13–43 KB 以便 Grep。
+
+**新建 14 页（1027 篇全覆盖）：**
+
+| 赛道 | 页面 | 篇数 |
+|------|------|------|
+| Web | [[web/source-index--des-ctf-web-2017-2022]] / [[web/source-index--des-ctf-web-2023-2024]] / [[web/source-index--des-ctf-web-2025+]] | 98 / 150 / 67 |
+| PWN | [[pwn/source-index--des-ctf-pwn-2016-2022]] / [[pwn/source-index--des-ctf-pwn-2023-2024]] / [[pwn/source-index--des-ctf-pwn-2025+]] | 56 / 94 / 34 |
+| Misc | [[misc/source-index--des-ctf-misc-2014-2022]] / [[misc/source-index--des-ctf-misc-2023-2024]] / [[misc/source-index--des-ctf-misc-2025+]] | 78 / 100 / 41 |
+| Reverse | [[reverse/source-index--des-ctf-reverse-2015-2022]] / [[reverse/source-index--des-ctf-reverse-2023-2024]] / [[reverse/source-index--des-ctf-reverse-2025+]] | 36 / 76 / 40 |
+| Crypto | [[crypto/source-index--des-ctf-crypto]] | 120 |
+| Forensics | [[forensics/source-index--des-ctf-forensics]] | 37 |
+
+**更新：** [[ctf/source-corpus--des-ctf-knowledge]]（修正为 1027 篇 / 723 场 + 索引页导航）、index.md（+14 页，ingested: 261，新增 Source Indexes 分区）、log.md。
