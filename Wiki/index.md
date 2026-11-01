@@ -2,8 +2,8 @@
 title: Wiki Index
 tags: [meta, index]
 created: 2026-06-07
-updated: 2026-06-10
-ingested: 242
+updated: 2026-11-01
+ingested: 247
 ---
 
 # Wiki Index
@@ -60,6 +60,10 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 | [[web/flask-unsign-session-forgery]] | Session | Flask-unsign session 伪造 (`/proc/self/environ` → secret_key) |
 | [[web/iconv-encoding-bypass-path-traversal]] | WAF Bypass | iconv `//IGNORE` 编码转换绕过路径黑名单 |
 | [[web/shiyanbar-ctf-brushing-01]] | 刷题录 | Shiyanbar 11 题 — CBC 翻转/md5 绕过/报错注/sqli 绕过/PHP 溢出 |
+| [[web/php-lfi-getshell-advanced]] | LFI 进阶 | phpinfo 临时文件 / php7 SegmentFault / session / **pearcmd.php** / 日志包含 五条 getshell 路线 |
+| [[web/rce-bypass-techniques]] | RCE 绕过 | 无参数 RCE（getallheaders/get_defined_vars/session_id）+ 异或·取反·自增 webshell + disable_functions/LD_PRELOAD + 盲外带 |
+| [[web/file-upload-bypass]] | 文件上传 | .htaccess/user.ini + Apache·IIS·Nginx 解析漏洞 + 二次渲染 + 条件竞争 |
+| [[web/ssrf-protocol-weaponization]] | SSRF 武器化 | gopher → Redis/MySQL/FastCGI/XDebug·rpdb·JDWP + DNS Rebinding + IP 变体绕过 |
 
 ## Crypto
 
@@ -400,7 +404,8 @@ This is the catalog of all pages in the wiki. Each entry includes a link, a one-
 |------|---------|
 | [[ctf/summary--litctf-2026-web-wp]] | LitCTF 2026 WEB 方向全WP 源文档摘要 |
 | [[ctf/summary--changchengbei-wp]] | 第三届长城杯防护赛决赛 部分 WP 源文档摘要 |
+| [[ctf/source-corpus--des-ctf-knowledge]] | 外部语料索引 — Des-CTF-Knowledge（1005 篇 WP / 708 场比赛）+ 技术→比赛反查表 |
 
 ---
 
-*Last updated: 2026-06-10 | Total pages: ~271+（128 命名页 + 99 skill 参考 + 11 command 参考 + 7 rules + 2 raw + 3 code-audit extras + 10 synthesis/index + 5 summary）*
+*Last updated: 2026-11-01 | Total pages: ~276+（133 命名页 + 99 skill 参考 + 11 command 参考 + 7 rules + 2 raw + 3 code-audit extras + 10 synthesis/index + 6 summary）*

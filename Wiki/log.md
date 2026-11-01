@@ -377,3 +377,25 @@ Synthesized 1124 GHSA entries into 8 curated concept pages organized by vulnerab
 | [[ctf/r3ctf-2024-forensics]] | Forensics | R3CTF 2024 Forensics 3题 — WSL磁盘/手机钓鱼/QuickLZ-C2解密 |
 
 **更新：** index.md（+6 页，ingested: 242）、log.md
+
+---
+
+## [2026-11-01 21:40] ingest | Des-CTF-Knowledge 外部语料（补缺录入）
+
+**来源：** [Dest1ny-Sec/Des-CTF-Knowledge](https://github.com/Dest1ny-Sec/Des-CTF-Knowledge) — 12 篇 Web 长文 + 1005 篇比赛 WP（708 场）+ 50+ 场景脚本
+
+**策略：** 不全量镜像。只把「技术要点 + PoC + 原始比赛归属」提炼进 wiki，原始细节按需回源。每项技术标注**原始比赛**而非仅仓库名。
+
+**新建页面：**
+
+| 页面 | 类型 | 内容 |
+|------|------|------|
+| [[web/php-lfi-getshell-advanced]] | LFI | phpinfo 临时文件 / php7 SegmentFault / session / pearcmd.php / 日志包含 五条 getshell 路线 |
+| [[web/rce-bypass-techniques]] | RCE | 无参数 RCE（getallheaders 等）+ 异或·取反·自增 webshell + disable_functions/LD_PRELOAD + 盲外带 |
+| [[web/file-upload-bypass]] | 上传 | .htaccess/user.ini + Apache·IIS·Nginx 解析漏洞 + 二次渲染 + 条件竞争 |
+| [[web/ssrf-protocol-weaponization]] | SSRF | gopher → Redis/MySQL/FastCGI/XDebug·rpdb·JDWP + DNS Rebinding + IP 变体 |
+| [[ctf/source-corpus--des-ctf-knowledge]] | 语料索引 | 库结构 + 12 篇长文原始出处 + 技术→比赛反查表（13 条已核验） |
+
+**核验到的比赛归属：** pearcmd → 2022 羊城杯 / 2023 ACTF / 第八届强网杯；`.htaccess` → BuildCTF 2024 / 2024 长城杯初赛；`getallheaders()` 无参数 RCE → 2023 NKCTF / 2023 上海大学生赛；gopher+Redis → 2022 春秋杯春季赛；三语言调试器 → 2021 春秋杯秋季赛；LD_PRELOAD → 2022 USTC Hackergame；gopher+MySQL → ISITDTU 2018。
+
+**更新：** index.md（+5 页，ingested: 247）、log.md。剩余 1005 篇 WP 待按赛道分批提炼。
