@@ -90,7 +90,7 @@ git clone https://github.com/doudou0308/ctf-wiki.git
 ```
 
 ### 👤 个人查阅
-`Ctrl+O` 搜索或浏览 `wiki/index.md` 分类目录。
+`Ctrl+O` 搜索或浏览 [Wiki 分类目录](Wiki/index.md)。
 
 ### 🤖 LLM Agent 调用
 配置 Agent 的 Workspace Rules 指向 `wiki/`，Agent 通过 `SearchCodebase`/`Grep` 匹配 `triggers` 字段自动检索。
