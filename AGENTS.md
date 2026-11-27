@@ -5,14 +5,14 @@ This file defines how the wiki is structured and how you (the LLM) should mainta
 ## Directory Structure
 
 ```
-Wiki/
+./
 ├── AGENTS.md           # This file — schema and workflow definitions
 ├── raw/                # Immutable source documents (articles, papers, notes, images)
 │   ├── assets/         # Downloaded images and attachments
 │   ├── ctf-solutions/   # Historical CTF writeups with full exploit scripts
 │   ├── ghsa/           # GHSA/CVE raw advisories (source documents, not indexed)
 │   └── ...
-├── wiki/               # LLM-generated markdown pages — the wiki itself
+├── Wiki/               # LLM-generated markdown pages — the wiki itself
 │   ├── index.md        # Content catalog: every page listed with link + summary
 │   ├── log.md          # Chronological activity log
 │   ├── web/            # Web security — SQLi, XSS, SSTI, SSRF, JWT, deserialization, etc.
@@ -92,7 +92,7 @@ When the user provides a new source document:
 
 1. **Read** the source document in `raw/`.
 2. **Discuss** key takeaways with the user (optional — ask if they want a summary first).
-3. **Create or update**: write a summary page in `wiki/`, then update all affected entity/concept pages across the wiki.
+3. **Create or update**: write a summary page in `Wiki/`, then update all affected entity/concept pages across the wiki.
 4. **Update `index.md`**: add the new page(s) to the catalog.
 5. **Update `log.md`**: append a log entry with prefix `## [YYYY-MM-DD] ingest | <Title>`.
 
@@ -131,7 +131,7 @@ Periodically (or when asked), health-check the wiki:
 When encountering GHSA (GitHub Security Advisory) entries in `ctf-kb/`:
 
 1. **Do not ingest individual GHSA files** as separate wiki pages (~1124 files would bloat the wiki).
-2. **Synthesis pages** (in `wiki/web/ghsa-*`, `wiki/code-audit/ghsa-*`, `wiki/crypto/ghsa-*`) serve as curated indexes organized by vulnerability class (RCE, XSS, SSRF, SQLi, etc.). Each synthesis page includes:
+2. **Synthesis pages** (in `Wiki/web/ghsa-*`, `Wiki/code-audit/ghsa-*`, `Wiki/crypto/ghsa-*`) serve as curated indexes organized by vulnerability class (RCE, XSS, SSRF, SQLi, etc.). Each synthesis page includes:
    - A Summary section describing the vulnerability class
    - A Common Patterns table listing sub-types with detection tips
    - A Representative GHSA Entries table with GHSA ID, CVE, severity, package, and brief
@@ -259,7 +259,7 @@ Files migrated from `.trae/skills/` and `.trae/commands/` use special prefixes:
 - Indexed in `index.md` under the "Command References" section.
 
 **Directory Map:**
-| Source (`.trae/`) | Destination (`wiki/`) |
+| Source (`.trae/`) | Destination (`Wiki/`) |
 |---|---|
 | `skills/ctf-pwn/*.md` | `pwn/skill-*.md` |
 | `skills/ctf-crypto/*.md` | `crypto/skill-*.md` |
@@ -277,17 +277,17 @@ Files migrated from `.trae/skills/` and `.trae/commands/` use special prefixes:
 
 ### New Subdirectory Conventions
 
-**`wiki/malware/`** — Malware analysis track
+**`Wiki/malware/`** — Malware analysis track
 - Covers: PE/.NET analysis, C2 protocol decoding, script deobfuscation, shellcode analysis, YARA rules.
 - CTF category for malicious binary analysis (C2 traffic, obfuscated loaders, ransomware).
 - Corresponding skill files: `skill-SKILL.md`, `skill-scripts-and-obfuscation.md`, `skill-c2-and-protocols.md`, `skill-pe-and-dotnet.md`, `skill-TRAE-debugger.md`.
 
-**`wiki/osint/`** — Open Source Intelligence track
+**`Wiki/osint/`** — Open Source Intelligence track
 - Covers: social media OSINT, DNS recon, geolocation, Google dorking, Wayback Machine, username enumeration.
 - CTF category for information gathering from public sources.
 - Corresponding skill files: `skill-SKILL.md`, `skill-social-media.md`, `skill-web-and-dns.md`.
 
-**`wiki/rules/`** — Global rules and conventions
+**`Wiki/rules/`** — Global rules and conventions
 - Contains: project-rules (解题全局规则), startup-prompt (启动提示词模板), skills-catalog (118 Skill 完整目录).
 - These files define how CTF challenges are approached and which tools/techniques are available.
 - Updated when new skills are added to the Trae environment.
@@ -304,5 +304,5 @@ Actions: `ingest`, `query`, `lint`, `create`, `update`, `merge`
 
 This format allows simple unix-style grep to parse the log:
 ```
-grep "^## \[" wiki/log.md | tail -5
+grep "^## \[" Wiki/log.md | tail -5
 ```
