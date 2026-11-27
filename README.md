@@ -68,7 +68,7 @@ CTF knowledge base for LLM agents — organized as a three-layer wiki</p>
 ```
 /
 ├── raw/                # Source Layer — 不可变源文档
-├── wiki/               # Wiki Layer — markdown 知识页面
+├── Wiki/               # Wiki Layer — markdown 知识页面
 │   ├── index.md        # 目录索引（Agent 检索入口）
 │   ├── log.md          # 变更日志
 │   ├── {12个赛道}       # 按赛道子目录（含 ctf/ 竞赛实体页）
@@ -93,12 +93,12 @@ git clone https://github.com/doudou0308/ctf-wiki.git
 `Ctrl+O` 搜索或浏览 [Wiki 分类目录](Wiki/index.md)。
 
 ### 🤖 LLM Agent 调用
-配置 Agent 的 Workspace Rules 指向 `wiki/`，Agent 通过 `SearchCodebase`/`Grep` 匹配 `triggers` 字段自动检索。
+配置 Agent 的 Workspace Rules 指向 `Wiki/`，Agent 通过 `SearchCodebase`/`Grep` 匹配 `triggers` 字段自动检索。
 
 ### 📥 摄入新知识
 ```
 1. 源文档放入 raw/
-2. Agent 按 AGENTS.md 规则 → 摄入到 wiki/ 对应赛道
+2. Agent 按 AGENTS.md 规则 → 摄入到 Wiki/ 对应赛道
 3. 更新 index.md + log.md
 ```
 
